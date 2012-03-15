@@ -2,15 +2,14 @@ NAME
     Perinci::Object - Object-oriented interface for Rinci metadata
 
 VERSION
-    version 0.05
+    version 0.06
 
 SYNOPSIS
      use Perinci::Object; # automatically exports risub(), rivar(), ripkg(),
                           # envres(), riresmeta()
      use Data::Dump; # for dd()
 
-     # OO interface to function metadata. supports Rinci 1.1 specification as well
-     # as old Sub::Spec 1.0 (will convert to 1.1).
+     # OO interface to function metadata.
 
      my $risub = risub {
          v => 1.1,
@@ -64,6 +63,10 @@ DESCRIPTION
     provides just that.
 
 FUNCTIONS
+  rimeta $meta => OBJECT
+    Exported by default. A shortcut for
+    Perinci::Object::Metadata->new($meta).
+
   risub $meta => OBJECT
     Exported by default. A shortcut for
     Perinci::Object::function->new($meta).

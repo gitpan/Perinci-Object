@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 sub new {
     my ($class, $meta) = @_;
@@ -88,7 +88,7 @@ Perinci::Object::Metadata - Base class for Perinci::Object metadata classes
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 AUTHOR
 
