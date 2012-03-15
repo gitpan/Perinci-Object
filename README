@@ -2,7 +2,7 @@ NAME
     Perinci::Object - Object-oriented interface for Rinci metadata
 
 VERSION
-    version 0.06
+    version 0.07
 
 SYNOPSIS
      use Perinci::Object; # automatically exports risub(), rivar(), ripkg(),
