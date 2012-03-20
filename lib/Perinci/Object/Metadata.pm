@@ -3,8 +3,9 @@ package Perinci::Object::Metadata;
 use 5.010;
 use strict;
 use warnings;
+use SHARYANTO::String::Util qw(trim_blank_lines);
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 sub new {
     my ($class, $meta) = @_;
@@ -25,15 +26,6 @@ sub type {
 sub as_struct {
     my $self = shift;
     ${$self};
-}
-
-sub _trim_blank_lines {
-    my $self = shift;
-    local $_ = shift;
-    return $_ unless defined;
-    s/\A(?:\n\s*)+//;
-    s/(?:\n\s*){2,}\z/\n/;
-    $_;
 }
 
 sub langprop {
@@ -60,7 +52,7 @@ sub langprop {
                 my $has_nl = $v =~ s/\n\z//;
                 $v = "{$k->[0] $v}" . ($has_nl ? "\n" : "");
             }
-            return $self->_trim_blank_lines($v);
+            return trim_blank_lines($v);
         }
     }
     return undef;
@@ -79,7 +71,7 @@ Perinci::Object::Metadata - Base class for Perinci::Object metadata classes
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 METHODS
 

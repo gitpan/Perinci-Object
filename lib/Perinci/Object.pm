@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 require Exporter;
 our @ISA    = qw(Exporter);
@@ -53,7 +53,7 @@ Perinci::Object - Object-oriented interface for Rinci metadata
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
