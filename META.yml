@@ -16,10 +16,11 @@ name: Perinci-Object
 requires:
   Rinci: 1.1.0
   SHARYANTO::String::Util: 0
+  SHARYANTO::Utils: 0.17
   Test::Exception: 0
   Test::More: 0.96
   perl: 5.010001
 resources:
   homepage: http://search.cpan.org/dist/Perinci-Object/
   repository: http://github.com/sharyanto/perl-Perinci-Object
-version: 0.08
+version: 0.09

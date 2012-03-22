@@ -17,7 +17,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Object",
-  "dist_version" => "0.08",
+  "dist_version" => "0.09",
   "license" => "perl",
   "module_name" => "Perinci::Object",
   "recommends" => {},
@@ -25,6 +25,7 @@ my %module_build_args = (
   "requires" => {
     "Rinci" => "1.1.0",
     "SHARYANTO::String::Util" => 0,
+    "SHARYANTO::Utils" => "0.17",
     "Test::Exception" => 0,
     "Test::More" => "0.96",
     "perl" => "5.010001"
