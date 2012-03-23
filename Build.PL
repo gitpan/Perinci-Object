@@ -17,15 +17,14 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Object",
-  "dist_version" => "0.09",
+  "dist_version" => "0.10",
   "license" => "perl",
   "module_name" => "Perinci::Object",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Rinci" => "1.1.0",
-    "SHARYANTO::String::Util" => 0,
-    "SHARYANTO::Utils" => "0.17",
+    "Rinci" => "1.1.13",
+    "SHARYANTO::String::Util" => "0.18",
     "Test::Exception" => 0,
     "Test::More" => "0.96",
     "perl" => "5.010001"
