@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use SHARYANTO::String::Util qw(trim_blank_lines);
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub new {
     my ($class, $meta) = @_;
@@ -71,7 +71,7 @@ Perinci::Object::Metadata - Base class for Perinci::Object metadata classes
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 METHODS
 

@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 use parent qw(Perinci::Object::Metadata);
 
@@ -24,6 +24,19 @@ sub feature {
     } else {
         ${$self}->{features}{$name};
     }
+}
+
+sub features {
+    my $self = shift;
+    ${$self}->{features} // {};
+}
+
+# transaction can be used to emulate dry run, by calling with -tx_action =>
+# 'check_state' only
+sub can_dry_run {
+    my $self = shift;
+    my $ff = ${$self}->{features} // {};
+    $ff->{dry_run} // $ff->{tx} && $ff->{tx}{v} == 2;
 }
 
 # convenience for accessing args property
@@ -55,44 +68,55 @@ Perinci::Object::function - Represent function metadata
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
- use Sub::Spec::Object::Response;
+ use Perinci::Object;
 
  $SPEC{foo} = {
-     spec_version=>1.1,
-     args => { b => {schema=>'int'} },
-     features => {undo=>1},
+     v        => 1.1,
+     args     => { b => {schema=>'int', req=>0} },
+     features => {idempotent=>1},
  };
- my $ssspec = ssspec $SPEC{foo};
- print $ssres->feature('undo'), # 1
-       $ssres->arg('a');        # undef
+ my $risub = risub $SPEC{foo};
+ print $risub->feature('idempotent'), # 1
+       $risub->arg('b')->{req},       # 0
+       $risub->arg('a');              # undef
 
 =head1 DESCRIPTION
 
-This class provides an object-oriented interface for sub spec.
+This class provides an object-oriented interface for function metadata.
 
 =head1 METHODS
 
-=head2 new($spec) => OBJECT
+=head2 new($meta) => OBJECT
 
-Create a new object from $spec. If $spec is undef, creates an empty spec.
+Create a new object from $meta. If $meta is undef, creates an empty metadata.
 
-=head2 $ssspec->feature(NAME[, VALUE])
+=head2 $risub->features => HASH
 
-Get or set named feature (B<features> key in spec). If a feature doesn't exist,
-undef will be returned.
+Return the C<features> property.
 
-=head2 $ssres->arg(NAME[, VALUE])
+=head2 $risub->feature(NAME[, VALUE])
 
-Get or set argument (B<args> key in spec). If an argument doesn't exist, undef
-will be returned.
+Get or set named feature (B<features> property in metadata). If a feature
+doesn't exist, undef will be returned.
+
+=head2 $risub->can_dry_run => BOOL
+
+Check whether function can do dry run, either from the C<dry_run> feature, or
+from the C<tx> feature. (Transaction can be used to emulate dry run, by calling
+the function with C<< -tx_action => 'check_state' >> only.)
+
+=head2 $risub->arg(NAME[, VALUE])
+
+Get or set argument (B<args> property in metadata). If an argument doesn't
+exist, undef will be returned.
 
 =head1 SEE ALSO
 
-L<Sub::Spec::Object>
+L<Perinci::Object>
 
 =head1 AUTHOR
 

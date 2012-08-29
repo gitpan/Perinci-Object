@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 use parent qw(Perinci::Object::Metadata);
 
@@ -22,7 +22,7 @@ Perinci::Object::result - Represent function/method result metadata
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 AUTHOR
 
