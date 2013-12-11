@@ -2,7 +2,7 @@ NAME
     Perinci::Object - Object-oriented interface for Rinci metadata
 
 VERSION
-    version 0.11
+    version 0.12
 
 SYNOPSIS
      use Perinci::Object; # automatically exports risub(), rivar(), ripkg(),
@@ -79,17 +79,34 @@ FUNCTIONS
     Exported by default. A shortcut for
     Perinci::Object::package->new($meta).
 
-  rires $res => OBJECT
+  riresmeta $res => OBJECT
     Exported by default. A shortcut for Perinci::Object::Result->new($res).
+
+    None are exported by default, but they are exportable.
 
 SEE ALSO
     Rinci
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Perinci-Object>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/sharyanto/perl-Perinci-Object>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Object>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Steven Haryanto.
+    This software is copyright (c) 2013 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
