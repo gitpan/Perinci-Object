@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use SHARYANTO::String::Util qw(trim_blank_lines);
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 sub new {
     my ($class, $meta) = @_;
@@ -34,6 +34,7 @@ sub langprop {
 
     my $deflang = ${$self}->{default_lang} // "en_US";
     my $olang   = $opts->{lang} || $ENV{LANGUAGE} || $ENV{LANG} || $deflang;
+    $olang =~ s/\W.+//; # change "en_US.UTF-8" to "en_US"
     my $mark    = $opts->{mark_different_lang} // 1;
     #print "deflang=$deflang, olang=$olang, mark_different_lang=$mark\n";
 
@@ -73,14 +74,7 @@ Perinci::Object::Metadata - Base class for Perinci::Object metadata classes
 
 =head1 VERSION
 
-version 0.12
-
-=head1 DESCRIPTION
-
-=head1 FUNCTIONS
-
-
-None are exported by default, but they are exportable.
+version 0.13
 
 =head1 METHODS
 
@@ -133,7 +127,7 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Steven Haryanto.
+This software is copyright (c) 2014 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

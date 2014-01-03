@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 require Exporter;
 our @ISA    = qw(Exporter);
@@ -55,7 +55,7 @@ Perinci::Object - Object-oriented interface for Rinci metadata
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
@@ -139,9 +139,6 @@ Exported by default. A shortcut for Perinci::Object::package->new($meta).
 
 Exported by default. A shortcut for Perinci::Object::Result->new($res).
 
-
-None are exported by default, but they are exportable.
-
 =head1 SEE ALSO
 
 L<Rinci>
@@ -168,7 +165,7 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Steven Haryanto.
+This software is copyright (c) 2014 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
