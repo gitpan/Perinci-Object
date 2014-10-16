@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 sub new {
     my ($class, $res) = @_;
@@ -96,14 +96,14 @@ Perinci::Object::EnvResult - Represent enveloped result
 
 =head1 VERSION
 
-version 0.13
+This document describes version 0.14 of Perinci::Object::EnvResult (from Perl distribution Perinci-Object), released on 2014-10-16.
 
 =head1 SYNOPSIS
 
- use Perinci::Object::Result;
+ use Perinci::Object::EnvResult;
  use Data::Dump; # for dd()
 
- my $rires = Perinci::Object::Result->new([200, "OK", [1, 2, 3]]);
+ my $rires = Perinci::Object::EnvResult->new([200, "OK", [1, 2, 3]]);
  dd $rires->is_success, # 1
     $rires->status,     # 200
     $rires->message,    # "OK"
@@ -118,8 +118,8 @@ version 0.13
  $rires->meta({errno=>-100});
 
  # shortcut: create a new OK result ([200, "OK"] or [200, "OK", $payload])
- $rires = Perinci::Object::Result->new_ok();
- $rires = Perinci::Object::Result->new_ok(42);
+ $rires = Perinci::Object::EnvResult->new_ok();
+ $rires = Perinci::Object::EnvResult->new_ok(42);
 
 =head1 DESCRIPTION
 
@@ -131,6 +131,11 @@ L<Rinci::function> for more details).
 =head2 new($res) => OBJECT
 
 Create a new object from $res enveloped result array.
+
+=head2 new_ok([ $actual_res ]) => OBJECT
+
+Shortcut for C<< new([200,"OK",$actual_res]) >>, or just C<< new([200,"OK"]) >> 
+if C<$actual_res> is not specified.
 
 =head2 $ssres->status
 
@@ -178,11 +183,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,10 +1,11 @@
-package Perinci::Object::function;
+package Perinci::Object::Function;
+
+our $DATE = '2014-10-16'; # DATE
+our $VERSION = '0.14'; # VERSION
 
 use 5.010;
 use strict;
 use warnings;
-
-our $VERSION = '0.13'; # VERSION
 
 use parent qw(Perinci::Object::Metadata);
 
@@ -66,11 +67,11 @@ __END__
 
 =head1 NAME
 
-Perinci::Object::function - Represent function metadata
+Perinci::Object::Function - Represent function metadata
 
 =head1 VERSION
 
-version 0.13
+This document describes version 0.14 of Perinci::Object::Function (from Perl distribution Perinci-Object), released on 2014-10-16.
 
 =head1 SYNOPSIS
 
@@ -95,6 +96,10 @@ This class provides an object-oriented interface for function metadata.
 =head2 new($meta) => OBJECT
 
 Create a new object from $meta. If $meta is undef, creates an empty metadata.
+
+=head2 $risub->type => str
+
+Will return C<function>.
 
 =head2 $risub->features => HASH
 
@@ -138,11 +143,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

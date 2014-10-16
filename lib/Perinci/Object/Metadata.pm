@@ -1,11 +1,12 @@
 package Perinci::Object::Metadata;
 
+our $DATE = '2014-10-16'; # DATE
+our $VERSION = '0.14'; # VERSION
+
 use 5.010;
 use strict;
 use warnings;
 use SHARYANTO::String::Util qw(trim_blank_lines);
-
-our $VERSION = '0.13'; # VERSION
 
 sub new {
     my ($class, $meta) = @_;
@@ -35,6 +36,7 @@ sub langprop {
     my $deflang = ${$self}->{default_lang} // "en_US";
     my $olang   = $opts->{lang} || $ENV{LANGUAGE} || $ENV{LANG} || $deflang;
     $olang =~ s/\W.+//; # change "en_US.UTF-8" to "en_US"
+    (my $olang2 = $olang) =~ s/\A([a-z]{2})_[A-Z]{2}\z/$1/; # change "en_US" to "en"
     my $mark    = $opts->{mark_different_lang} // 1;
     #print "deflang=$deflang, olang=$olang, mark_different_lang=$mark\n";
 
@@ -42,7 +44,11 @@ sub langprop {
     if ($olang eq $deflang) {
         @k = ([$olang, $prop, 0]);
     } else {
-        @k = ([$olang, "$prop.alt.lang.$olang", 0], [$deflang, $prop, $mark]);
+        @k = (
+            [$olang, "$prop.alt.lang.$olang", 0],
+            ([$olang2, "$prop.alt.lang.$olang2", 0]) x !!($olang2 ne $olang),
+            [$deflang, $prop, $mark],
+        );
     }
 
     for my $k (@k) {
@@ -74,13 +80,19 @@ Perinci::Object::Metadata - Base class for Perinci::Object metadata classes
 
 =head1 VERSION
 
-version 0.13
+This document describes version 0.14 of Perinci::Object::Metadata (from Perl distribution Perinci-Object), released on 2014-10-16.
 
 =head1 METHODS
+
+=head2 new => obj
+
+Constructor.
 
 =head2 v
 
 =head2 as_struct
+
+=head2 type => str
 
 =head2 langprop($prop, \%opts)
 
@@ -123,11 +135,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

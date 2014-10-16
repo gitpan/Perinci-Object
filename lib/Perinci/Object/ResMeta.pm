@@ -1,14 +1,15 @@
-package Perinci::Object::result;
+package Perinci::Object::ResMeta;
+
+our $DATE = '2014-10-16'; # DATE
+our $VERSION = '0.14'; # VERSION
 
 use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.13'; # VERSION
-
 use parent qw(Perinci::Object::Metadata);
 
-sub type { "result" }
+sub type { "resmeta" }
 
 1;
 # ABSTRACT: Represent function/method result metadata
@@ -21,11 +22,17 @@ __END__
 
 =head1 NAME
 
-Perinci::Object::result - Represent function/method result metadata
+Perinci::Object::ResMeta - Represent function/method result metadata
 
 =head1 VERSION
 
-version 0.13
+This document describes version 0.14 of Perinci::Object::ResMeta (from Perl distribution Perinci-Object), released on 2014-10-16.
+
+=head1 METHODS
+
+=head2 $riresmeta->type => str
+
+Will return C<resmeta>.
 
 =head1 HOMEPAGE
 
@@ -45,11 +52,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
