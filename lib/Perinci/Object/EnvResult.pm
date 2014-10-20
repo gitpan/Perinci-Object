@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
 
 sub new {
     my ($class, $res) = @_;
@@ -96,7 +96,7 @@ Perinci::Object::EnvResult - Represent enveloped result
 
 =head1 VERSION
 
-This document describes version 0.14 of Perinci::Object::EnvResult (from Perl distribution Perinci-Object), released on 2014-10-16.
+This document describes version 0.15 of Perinci::Object::EnvResult (from Perl distribution Perinci-Object), released on 2014-10-20.
 
 =head1 SYNOPSIS
 

@@ -1,7 +1,7 @@
 package Perinci::Object::Variable;
 
-our $DATE = '2014-10-16'; # DATE
-our $VERSION = '0.14'; # VERSION
+our $DATE = '2014-10-20'; # DATE
+our $VERSION = '0.15'; # VERSION
 
 use 5.010;
 use strict;
@@ -26,7 +26,7 @@ Perinci::Object::Variable - Represent variable metadata
 
 =head1 VERSION
 
-This document describes version 0.14 of Perinci::Object::Variable (from Perl distribution Perinci-Object), released on 2014-10-16.
+This document describes version 0.15 of Perinci::Object::Variable (from Perl distribution Perinci-Object), released on 2014-10-20.
 
 =head1 METHODS
 
