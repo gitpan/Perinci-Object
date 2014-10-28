@@ -2,12 +2,12 @@ NAME
     Perinci::Object - Object-oriented interface for Rinci metadata
 
 VERSION
-    This document describes version 0.15 of Perinci::Object (from Perl
-    distribution Perinci-Object), released on 2014-10-20.
+    This document describes version 0.16 of Perinci::Object (from Perl
+    distribution Perinci-Object), released on 2014-10-28.
 
 SYNOPSIS
      use Perinci::Object; # automatically exports risub(), rivar(), ripkg(),
-                          # envres(), riresmeta()
+                          # envres(), envresmulti(), riresmeta()
      use Data::Dump; # for dd()
 
      # OO interface to function metadata.
@@ -83,6 +83,10 @@ FUNCTIONS
   envres $res => OBJECT
     Exported by default. A shortcut for
     Perinci::Object::EnvResult->new($res).
+
+  envresmulti $res => OBJECT
+    Exported by default. A shortcut for
+    Perinci::Object::EnvResultMulti->new($res).
 
   riresmeta $resmeta => OBJECT
     Exported by default. A shortcut for Perinci::Object::ResMeta->new($res).

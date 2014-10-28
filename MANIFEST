@@ -9,6 +9,7 @@ README
 dist.ini
 lib/Perinci/Object.pm
 lib/Perinci/Object/EnvResult.pm
+lib/Perinci/Object/EnvResultMulti.pm
 lib/Perinci/Object/Function.pm
 lib/Perinci/Object/Metadata.pm
 lib/Perinci/Object/Package.pm
@@ -16,6 +17,7 @@ lib/Perinci/Object/ResMeta.pm
 lib/Perinci/Object/Variable.pm
 t/00-compile.t
 t/EnvResult.t
+t/EnvResultMulti.t
 t/Function.t
 t/Metadata.t
 t/Package.t

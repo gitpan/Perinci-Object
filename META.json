@@ -29,7 +29,7 @@
       },
       "runtime" : {
          "requires" : {
-            "Rinci" : "v1.1.58",
+            "Rinci" : "v1.1.63",
             "SHARYANTO::String::Util" : "0.18",
             "perl" : "5.010001"
          }
@@ -56,7 +56,7 @@
          "web" : "https://github.com/sharyanto/perl-Perinci-Object"
       }
    },
-   "version" : "0.15",
+   "version" : "0.16",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018001"
