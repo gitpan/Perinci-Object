@@ -1,7 +1,7 @@
 package Perinci::Object;
 
-our $DATE = '2014-10-28'; # DATE
-our $VERSION = '0.16'; # VERSION
+our $DATE = '2014-10-29'; # DATE
+our $VERSION = '0.17'; # VERSION
 
 use 5.010001;
 use strict;
@@ -61,7 +61,7 @@ Perinci::Object - Object-oriented interface for Rinci metadata
 
 =head1 VERSION
 
-This document describes version 0.16 of Perinci::Object (from Perl distribution Perinci-Object), released on 2014-10-28.
+This document describes version 0.17 of Perinci::Object (from Perl distribution Perinci-Object), released on 2014-10-29.
 
 =head1 SYNOPSIS
 
@@ -78,14 +78,14 @@ This document describes version 0.16 of Perinci::Object (from Perl distribution 
      args => { a1 => { schema => 'int*' }, a2 => { schema => 'str' } },
      features => { pure=>1 },
  };
- dd $risub->type,                         # "function"
-    $risub->v,                            # 1.0
-    $risub->arg('a1'),                    # { schema=>'int*' }
-    $risub->arg('a3'),                    # undef
-    $risub->feature('pure'),              # 1
-    $risub->feature('foo'),               # undef
-    $risub->langprop('summary'),          # 'Calculate foo and bar'
-    $risub->langprop('summary', 'id_ID'), # 'Menghitung foo dan bar'
+ dd $risub->type,                                 # "function"
+    $risub->v,                                    # 1.1
+    $risub->arg('a1'),                            # { schema=>'int*' }
+    $risub->arg('a3'),                            # undef
+    $risub->feature('pure'),                      # 1
+    $risub->feature('foo'),                       # undef
+    $risub->langprop('summary'),                  # 'Calculate foo and bar'
+    $risub->langprop({lang=>'id_ID'}, 'summary'), # 'Menghitung foo dan bar'
 
  # setting arg and property
  $risub->arg('a3', 'array');  # will actually fail for 1.0 metadata
@@ -163,7 +163,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/Perinci-Ob
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-Perinci-Object>.
+Source repository is at L<https://github.com/perlancar/perl-Perinci-Object>.
 
 =head1 BUGS
 

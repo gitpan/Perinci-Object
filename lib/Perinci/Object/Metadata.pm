@@ -1,7 +1,7 @@
 package Perinci::Object::Metadata;
 
-our $DATE = '2014-10-28'; # DATE
-our $VERSION = '0.16'; # VERSION
+our $DATE = '2014-10-29'; # DATE
+our $VERSION = '0.17'; # VERSION
 
 use 5.010;
 use strict;
@@ -30,8 +30,14 @@ sub as_struct {
 }
 
 sub langprop {
-    my ($self, $prop, $opts) = @_;
-    $opts //= {};
+    my $self = shift;
+    my $opts;
+    if (ref($_[0]) eq 'HASH') {
+        $opts = shift;
+    } else {
+        $opts = {};
+    }
+    my $prop = shift;
 
     my $deflang = ${$self}->{default_lang} // "en_US";
     my $olang   = $opts->{lang} || $ENV{LANGUAGE} || $ENV{LANG} || $deflang;
@@ -51,18 +57,71 @@ sub langprop {
         );
     }
 
+    my $v;
+  GET:
     for my $k (@k) {
         #print "k=".join(", ", @$k)."\n";
-        my $v = ${$self}->{$k->[1]};
+        $v = ${$self}->{$k->[1]};
         if (defined $v) {
             if ($k->[2]) {
                 my $has_nl = $v =~ s/\n\z//;
                 $v = "{$k->[0] $v}" . ($has_nl ? "\n" : "");
             }
-            return trim_blank_lines($v);
+            $v = trim_blank_lines($v);
+            last GET;
         }
     }
-    return undef;
+
+    if (@_) {
+        # set value
+        ${$self}->{$k[0][1]} = $_[0];
+    }
+
+    $v;
+}
+
+sub name {
+    my $self = shift;
+    my $opts;
+    if (@_ && ref($_[0]) eq 'HASH') {
+        $opts = shift;
+    } else {
+        $opts = {};
+    }
+    $self->langprop($opts, "name", @_);
+}
+
+sub caption {
+    my $self = shift;
+    my $opts;
+    if (@_ && ref($_[0]) eq 'HASH') {
+        $opts = shift;
+    } else {
+        $opts = {};
+    }
+    $self->langprop($opts, "caption", @_);
+}
+
+sub summary {
+    my $self = shift;
+    my $opts;
+    if (@_ && ref($_[0]) eq 'HASH') {
+        $opts = shift;
+    } else {
+        $opts = {};
+    }
+    $self->langprop($opts, "summary", @_);
+}
+
+sub description {
+    my $self = shift;
+    my $opts;
+    if (@_ && ref($_[0]) eq 'HASH') {
+        $opts = shift;
+    } else {
+        $opts = {};
+    }
+    $self->langprop($opts, "description", @_);
 }
 
 1;
@@ -80,7 +139,7 @@ Perinci::Object::Metadata - Base class for Perinci::Object metadata classes
 
 =head1 VERSION
 
-This document describes version 0.16 of Perinci::Object::Metadata (from Perl distribution Perinci-Object), released on 2014-10-28.
+This document describes version 0.17 of Perinci::Object::Metadata (from Perl distribution Perinci-Object), released on 2014-10-29.
 
 =head1 METHODS
 
@@ -88,15 +147,21 @@ This document describes version 0.16 of Perinci::Object::Metadata (from Perl dis
 
 Constructor.
 
-=head2 v
+=head2 v => float
 
-=head2 as_struct
+Get version.
+
+=head2 as_struct => hash
+
+Get underlying data structure.
 
 =head2 type => str
 
-=head2 langprop($prop, \%opts)
+Return type (e.g. C<function>, C<package>).
 
-Get property value in the specified language (i.e., either in C<prop> or
+=head2 langprop([ \%opts, ]$prop[, $new_value])
+
+Get or set property value in the specified language (i.e., either in C<prop> or
 C<prop.alt.lang.XXX> properties).
 
 Known options:
@@ -117,13 +182,29 @@ returned.
 
 =back
 
+=head2 name([ $new_value ]) => $value
+
+Get or set C<name> property. Will call C<langprop()>.
+
+=head2 summary([ $new_value ]) => $value
+
+Get or set C<summary> property. Will call C<langprop()>.
+
+=head2 description([ $new_value ]) => $value
+
+Get or set C<description> property. Will call C<langprop()>.
+
+=head2 caption([ $new_value ]) => $value
+
+Get or set C<caption> property. Will call C<langprop()>.
+
 =head1 HOMEPAGE
 
 Please visit the project's homepage at L<https://metacpan.org/release/Perinci-Object>.
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-Perinci-Object>.
+Source repository is at L<https://github.com/perlancar/perl-Perinci-Object>.
 
 =head1 BUGS
 

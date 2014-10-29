@@ -1,7 +1,7 @@
 package Perinci::Object::Function;
 
-our $DATE = '2014-10-28'; # DATE
-our $VERSION = '0.16'; # VERSION
+our $DATE = '2014-10-29'; # DATE
+our $VERSION = '0.17'; # VERSION
 
 use 5.010;
 use strict;
@@ -71,7 +71,7 @@ Perinci::Object::Function - Represent function metadata
 
 =head1 VERSION
 
-This document describes version 0.16 of Perinci::Object::Function (from Perl distribution Perinci-Object), released on 2014-10-28.
+This document describes version 0.17 of Perinci::Object::Function (from Perl distribution Perinci-Object), released on 2014-10-29.
 
 =head1 SYNOPSIS
 
@@ -131,7 +131,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/Perinci-Ob
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-Perinci-Object>.
+Source repository is at L<https://github.com/perlancar/perl-Perinci-Object>.
 
 =head1 BUGS
 
