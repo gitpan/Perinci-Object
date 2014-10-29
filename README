@@ -2,7 +2,7 @@ NAME
     Perinci::Object - Object-oriented interface for Rinci metadata
 
 VERSION
-    This document describes version 0.17 of Perinci::Object (from Perl
+    This document describes version 0.18 of Perinci::Object (from Perl
     distribution Perinci-Object), released on 2014-10-29.
 
 SYNOPSIS

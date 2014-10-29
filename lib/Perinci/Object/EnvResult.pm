@@ -1,7 +1,7 @@
 package Perinci::Object::EnvResult;
 
 our $DATE = '2014-10-29'; # DATE
-our $VERSION = '0.17'; # VERSION
+our $VERSION = '0.18'; # VERSION
 
 use 5.010;
 use strict;
@@ -97,7 +97,7 @@ Perinci::Object::EnvResult - Represent enveloped result
 
 =head1 VERSION
 
-This document describes version 0.17 of Perinci::Object::EnvResult (from Perl distribution Perinci-Object), released on 2014-10-29.
+This document describes version 0.18 of Perinci::Object::EnvResult (from Perl distribution Perinci-Object), released on 2014-10-29.
 
 =head1 SYNOPSIS
 

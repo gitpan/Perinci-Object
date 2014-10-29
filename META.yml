@@ -25,7 +25,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Object
   homepage: https://metacpan.org/release/Perinci-Object
   repository: git://github.com/perlancar/perl-Perinci-Object.git
-version: '0.17'
+version: '0.18'
 x_Dist_Zilla:
   perl:
     version: '5.018002'
