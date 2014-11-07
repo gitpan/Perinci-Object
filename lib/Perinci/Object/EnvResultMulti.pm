@@ -1,7 +1,7 @@
 package Perinci::Object::EnvResultMulti;
 
-our $DATE = '2014-10-29'; # DATE
-our $VERSION = '0.18'; # VERSION
+our $DATE = '2014-11-07'; # DATE
+our $VERSION = '0.19'; # VERSION
 
 use 5.010;
 use strict;
@@ -24,7 +24,7 @@ sub add_result {
     push @{ ${$self}->[3]{results} },
         {%{ $extra // {} }, status=>$status, message=>$message};
     for (@{ ${$self}->[3]{results} // [] }) {
-        if ($_->{status} =~ /\A2/) {
+        if ($_->{status} =~ /\A(2|304)/) {
             $num_ok++;
         } else {
             $num_nok++;
@@ -59,7 +59,7 @@ Perinci::Object::EnvResultMulti - Represent enveloped result (multistatus)
 
 =head1 VERSION
 
-This document describes version 0.18 of Perinci::Object::EnvResultMulti (from Perl distribution Perinci-Object), released on 2014-10-29.
+This document describes version 0.19 of Perinci::Object::EnvResultMulti (from Perl distribution Perinci-Object), released on 2014-11-07.
 
 =head1 SYNOPSIS
 
