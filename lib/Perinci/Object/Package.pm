@@ -1,7 +1,7 @@
 package Perinci::Object::Package;
 
-our $DATE = '2014-11-07'; # DATE
-our $VERSION = '0.19'; # VERSION
+our $DATE = '2014-12-10'; # DATE
+our $VERSION = '0.20'; # VERSION
 
 use 5.010;
 use strict;
@@ -26,7 +26,7 @@ Perinci::Object::Package - Represent package metadata
 
 =head1 VERSION
 
-This document describes version 0.19 of Perinci::Object::Package (from Perl distribution Perinci-Object), released on 2014-11-07.
+This document describes version 0.20 of Perinci::Object::Package (from Perl distribution Perinci-Object), released on 2014-12-10.
 
 =head1 METHODS
 

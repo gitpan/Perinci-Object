@@ -1,7 +1,7 @@
 package Perinci::Object;
 
-our $DATE = '2014-11-07'; # DATE
-our $VERSION = '0.19'; # VERSION
+our $DATE = '2014-12-10'; # DATE
+our $VERSION = '0.20'; # VERSION
 
 use 5.010001;
 use strict;
@@ -61,7 +61,7 @@ Perinci::Object - Object-oriented interface for Rinci metadata
 
 =head1 VERSION
 
-This document describes version 0.19 of Perinci::Object (from Perl distribution Perinci-Object), released on 2014-11-07.
+This document describes version 0.20 of Perinci::Object (from Perl distribution Perinci-Object), released on 2014-12-10.
 
 =head1 SYNOPSIS
 

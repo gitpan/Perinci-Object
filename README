@@ -2,8 +2,8 @@ NAME
     Perinci::Object - Object-oriented interface for Rinci metadata
 
 VERSION
-    This document describes version 0.19 of Perinci::Object (from Perl
-    distribution Perinci-Object), released on 2014-11-07.
+    This document describes version 0.20 of Perinci::Object (from Perl
+    distribution Perinci-Object), released on 2014-12-10.
 
 SYNOPSIS
      use Perinci::Object; # automatically exports risub(), rivar(), ripkg(),
