@@ -1,7 +1,7 @@
 package Perinci::Object::Metadata;
 
-our $DATE = '2014-12-10'; # DATE
-our $VERSION = '0.20'; # VERSION
+our $DATE = '2014-12-11'; # DATE
+our $VERSION = '0.21'; # VERSION
 
 use 5.010;
 use strict;
@@ -139,7 +139,7 @@ Perinci::Object::Metadata - Base class for Perinci::Object metadata classes
 
 =head1 VERSION
 
-This document describes version 0.20 of Perinci::Object::Metadata (from Perl distribution Perinci-Object), released on 2014-12-10.
+This document describes version 0.21 of Perinci::Object::Metadata (from Perl distribution Perinci-Object), released on 2014-12-11.
 
 =head1 METHODS
 

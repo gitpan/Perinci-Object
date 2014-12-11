@@ -1,7 +1,7 @@
 package Perinci::Object::ResMeta;
 
-our $DATE = '2014-12-10'; # DATE
-our $VERSION = '0.20'; # VERSION
+our $DATE = '2014-12-11'; # DATE
+our $VERSION = '0.21'; # VERSION
 
 use 5.010;
 use strict;
@@ -26,7 +26,7 @@ Perinci::Object::ResMeta - Represent function/method result metadata
 
 =head1 VERSION
 
-This document describes version 0.20 of Perinci::Object::ResMeta (from Perl distribution Perinci-Object), released on 2014-12-10.
+This document describes version 0.21 of Perinci::Object::ResMeta (from Perl distribution Perinci-Object), released on 2014-12-11.
 
 =head1 METHODS
 

@@ -2,8 +2,8 @@ NAME
     Perinci::Object - Object-oriented interface for Rinci metadata
 
 VERSION
-    This document describes version 0.20 of Perinci::Object (from Perl
-    distribution Perinci-Object), released on 2014-12-10.
+    This document describes version 0.21 of Perinci::Object (from Perl
+    distribution Perinci-Object), released on 2014-12-11.
 
 SYNOPSIS
      use Perinci::Object; # automatically exports risub(), rivar(), ripkg(),
@@ -57,6 +57,22 @@ SYNOPSIS
 
      # OO interface to function/method result metadata
      my $riresmeta = riresmeta { ... };
+
+     # an example of using riresmulti()
+     sub myfunc {
+         ...
+
+         my $envres = envresmulti();
+
+         # add result for each item
+         $envres->add_result(200, "OK", {item_id=>1});
+         $envres->add_result(202, "OK", {item_id=>2, note=>"blah"});
+         $envres->add_result(404, "Not found", {item_id=>3});
+         ...
+
+         # finally, return the result
+         return $envres->as_struct;
+     }
 
 DESCRIPTION
     Rinci works using pure data structures, but sometimes it's convenient to

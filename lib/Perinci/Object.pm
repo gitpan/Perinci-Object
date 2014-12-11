@@ -1,7 +1,7 @@
 package Perinci::Object;
 
-our $DATE = '2014-12-10'; # DATE
-our $VERSION = '0.20'; # VERSION
+our $DATE = '2014-12-11'; # DATE
+our $VERSION = '0.21'; # VERSION
 
 use 5.010001;
 use strict;
@@ -61,7 +61,7 @@ Perinci::Object - Object-oriented interface for Rinci metadata
 
 =head1 VERSION
 
-This document describes version 0.20 of Perinci::Object (from Perl distribution Perinci-Object), released on 2014-12-10.
+This document describes version 0.21 of Perinci::Object (from Perl distribution Perinci-Object), released on 2014-12-11.
 
 =head1 SYNOPSIS
 
@@ -116,6 +116,22 @@ This document describes version 0.20 of Perinci::Object (from Perl distribution 
 
  # OO interface to function/method result metadata
  my $riresmeta = riresmeta { ... };
+
+ # an example of using riresmulti()
+ sub myfunc {
+     ...
+
+     my $envres = envresmulti();
+
+     # add result for each item
+     $envres->add_result(200, "OK", {item_id=>1});
+     $envres->add_result(202, "OK", {item_id=>2, note=>"blah"});
+     $envres->add_result(404, "Not found", {item_id=>3});
+     ...
+
+     # finally, return the result
+     return $envres->as_struct;
+ }
 
 =head1 DESCRIPTION
 
